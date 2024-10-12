@@ -2,6 +2,7 @@
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import type { Metadata } from "next";
 import "./globals.css";
+import { Providers } from '@/providers';
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
@@ -15,7 +16,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={jakarta.className}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
