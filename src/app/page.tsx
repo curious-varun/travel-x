@@ -1,18 +1,28 @@
-'use client';
-
-import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
+import { ThemeToggleButton } from "@/components/theme-toggle-button";
+import Link from "next/link";
 
 export default function HomePage() {
-  const { setTheme } = useTheme();
-
   return (
-    <div className="w-full max-w-[2000px] mx-auto flex gap-10 ml-[50px]">
-      hi
-      <Button onClick={() => setTheme("dark")}> dark </Button>
-      <Button onClick={() => setTheme("light")}> light </Button>
+    <div className="flex flex-col justify-center items-center h-screen gap-8">
+      <div>
+        <h1> hi this is home page</h1>
+      </div>
+      <div className="w-10 h-10">
+        <ThemeToggleButton />
+      </div>
+      <Link href='/login'> login </Link>
+      <Link href='/home'> home </Link>
+      <Link href='/login'> login </Link>
+
     </div>
 
-
-  );
+  )
 }
+
+
+
+
+
+
+
+
